@@ -1,0 +1,14 @@
+default: list
+
+list:
+    @just --list
+
+archive no = "0":
+    COPYFILE_DISABLE=1 tar -cJf lab{{no}}.tar.xz \
+        --exclude='__MACOSX' \
+        --exclude='.DS_Store' \
+        --exclude='build' \
+        --exclude='material' \
+        --exclude='.xmake' \
+        -C ../lab/{{no}} \
+        $(cd ../lab/{{no}} && for f in example src xmake.lua CMakeLists.txt include test; do [ -e "$f" ] && printf '%s\n' "$f"; done)

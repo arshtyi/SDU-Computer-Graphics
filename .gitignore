@@ -1,3 +1,6 @@
 material/
 .xmake/
 build/
+CMakeLists.txt
+*.pdf
+*.tar.xz
