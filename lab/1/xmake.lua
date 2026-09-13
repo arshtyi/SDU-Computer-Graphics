@@ -1,4 +1,4 @@
-set_project("lab0")
+set_project("lab1")
 set_languages("cxx17")
 add_rules("mode.debug", "mode.release")
 
@@ -14,14 +14,21 @@ end)
 package_end()
 add_requires("eigen", { system = true })
 
-target("Example")
-set_kind("binary")
-add_files("example/main.cpp")
-add_packages("eigen")
-target_end()
-
-target("Transformation")
+target("PointLocation")
 set_kind("binary")
 add_files("src/main.cpp")
 add_packages("eigen")
+set_rundir(".")
+
+for _, name in ipairs({ "basic", "clockwise", "vertex_ray" }) do
+	add_tests(name, {
+		runargs = { "test/" .. name .. ".in" },
+		pass_output_files = "test/" .. name .. ".out",
+		plain = true,
+		trim_output = true,
+	})
+end
+for _, name in ipairs({ "collinear", "repeated" }) do
+	add_tests(name, { runargs = { "test/" .. name .. ".in" }, should_fail = true })
+end
 target_end()

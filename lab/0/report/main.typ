@@ -138,7 +138,7 @@ $
 
 + 编写 ```sh xmake.lua``` 并编译执行
     #raw(block: true, read("../xmake.lua"), lang: "lua")
-    ```fish
+    ```sh
     xmake
     xmake run Example
     xmake run Transformation

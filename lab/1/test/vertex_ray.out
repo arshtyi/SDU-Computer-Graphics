@@ -1,0 +1,36 @@
+P = (1, 2)
+  Ray casting: inside
+  Same side:   inside
+  Barycentric: inside
+P = (-1, 2)
+  Ray casting: outside
+  Same side:   outside
+  Barycentric: outside
+P = (5, 2)
+  Ray casting: outside
+  Same side:   outside
+  Barycentric: outside
+P = (4, 2)
+  Ray casting: boundary
+  Same side:   boundary
+  Barycentric: boundary
+P = (0, 2)
+  Ray casting: boundary
+  Same side:   boundary
+  Barycentric: boundary
+P = (2, 1)
+  Ray casting: boundary
+  Same side:   boundary
+  Barycentric: boundary
+P = (2, 3)
+  Ray casting: boundary
+  Same side:   boundary
+  Barycentric: boundary
+P = (-1, 0)
+  Ray casting: outside
+  Same side:   outside
+  Barycentric: outside
+P = (-1, 4)
+  Ray casting: outside
+  Same side:   outside
+  Barycentric: outside
