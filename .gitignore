@@ -1,6 +1,5 @@
-material/
-.xmake/
-build/
-CMakeLists.txt
+material
+.xmake
+build
 *.pdf
 *.tar.xz
