@@ -3,12 +3,31 @@ default: list
 list:
     @just --list
 
-archive no = "0":
-    COPYFILE_DISABLE=1 tar -cJf lab{{no}}.tar.xz \
-        --exclude='__MACOSX' \
-        --exclude='.DS_Store' \
-        --exclude='build' \
-        --exclude='material' \
-        --exclude='.xmake' \
-        -C ../lab/{{no}} \
-        $(cd ../lab/{{no}} && for f in example src xmake.lua CMakeLists.txt include test; do [ -e "$f" ] && printf '%s\n' "$f"; done)
+archive *nos = "0 1 2 3 4 5 6 7 8 9 10":
+    #!/usr/bin/env bash
+    set -eu
+    for no in {{nos}}; do
+        files=()
+        for file in example include src test xmake.lua report/main.pdf ; do
+            if [ -e "../lab/$no/$file" ]; then
+                files+=("$file")
+            fi
+        done
+        [ "${#files[@]}" -gt 0 ] || continue
+        COPYFILE_DISABLE=1 tar -cJf "lab$no.tar.xz" \
+            --exclude='__MACOSX' \
+            --exclude='.DS_Store' \
+            --exclude='build' \
+            --exclude='material' \
+            --exclude='.xmake' \
+            -C "../lab/$no" "${files[@]}"
+    done
+
+report *nos = "0 1 2 3 4 5 6 7 8 9 10":
+    #!/usr/bin/env bash
+    set -eu
+    for no in {{nos}}; do
+        pdf="../lab/$no/report/main.pdf"
+        [ -f "$pdf" ] || continue
+        cp "$pdf" "智能24_202400130242_彭靖轩_计算机图形学实验$no.pdf"
+    done

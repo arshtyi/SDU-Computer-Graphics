@@ -1,0 +1,20 @@
+set_project("lab2")
+set_languages("cxx17")
+add_rules("mode.debug", "mode.release")
+
+add_requires("eigen 3", { system = false })
+add_requires("opencv 4", { configs = { shared = true, ffmpeg = false, eigen = false } })
+
+target("Example")
+set_kind("binary")
+add_files("example/src/*.cpp")
+add_includedirs("example/include")
+add_packages("eigen", "opencv")
+target_end()
+
+target("Rasterizer")
+set_kind("binary")
+add_files("src/*.cpp")
+add_includedirs("include")
+add_packages("eigen", "opencv")
+target_end()

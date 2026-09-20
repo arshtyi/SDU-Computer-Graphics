@@ -8,7 +8,6 @@ target("PointLocation")
 set_kind("binary")
 add_files("src/main.cpp")
 add_packages("eigen")
-set_rundir(".")
 
 for _, name in ipairs({ "basic", "clockwise", "vertex_ray" }) do
 	add_tests(name, {
