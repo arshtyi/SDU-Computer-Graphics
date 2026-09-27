@@ -92,12 +92,9 @@ int main(int argc, char *argv[]) {
         }
         const bool boundary = onBoundary(triangle, p);
         std::cout << "P = (" << p.x() << ", " << p.y() << ")\n";
-        std::cout << "  Ray casting: "
-                  << (boundary ? "boundary" : location(rayCasting(triangle, p))) << '\n';
-        std::cout << "  Same side:   " << (boundary ? "boundary" : location(sameSide(triangle, p)))
-                  << '\n';
-        std::cout << "  Barycentric: "
-                  << (boundary ? "boundary" : location(barycentric(triangle, p))) << '\n';
+        std::cout << "  Ray casting: " << (boundary ? "boundary" : location(rayCasting(triangle, p))) << '\n';
+        std::cout << "  Same side:   " << (boundary ? "boundary" : location(sameSide(triangle, p))) << '\n';
+        std::cout << "  Barycentric: " << (boundary ? "boundary" : location(barycentric(triangle, p))) << '\n';
     }
     return 0;
 }

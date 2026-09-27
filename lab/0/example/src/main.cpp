@@ -55,8 +55,7 @@ void example_matrix() {
     std::cout << "(i * j)(0, 0) = " << (i * j)(0, 0) << '\n';
     std::cout << "i.row(0).dot(j.col(0)) = " << i.row(0).dot(j.col(0)) << '\n';
     std::cout << "i * v =\n" << i * v << '\n';
-    std::cout << "i * v by row dot products =\n"
-              << Eigen::Vector3f(i.row(0).dot(v), i.row(1).dot(v), i.row(2).dot(v)) << '\n';
+    std::cout << "i * v by row dot products =\n" << Eigen::Vector3f(i.row(0).dot(v), i.row(1).dot(v), i.row(2).dot(v)) << '\n';
 }
 
 int main() {

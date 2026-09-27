@@ -9,13 +9,9 @@ namespace rst {
 
 enum class Buffers { Color = 1, Depth = 2 };
 
-inline Buffers operator|(Buffers a, Buffers b) {
-    return static_cast<Buffers>(static_cast<int>(a) | static_cast<int>(b));
-}
+inline Buffers operator|(Buffers a, Buffers b) { return static_cast<Buffers>(static_cast<int>(a) | static_cast<int>(b)); }
 
-inline Buffers operator&(Buffers a, Buffers b) {
-    return static_cast<Buffers>(static_cast<int>(a) & static_cast<int>(b));
-}
+inline Buffers operator&(Buffers a, Buffers b) { return static_cast<Buffers>(static_cast<int>(a) & static_cast<int>(b)); }
 
 enum class Primitive { Line, Triangle };
 

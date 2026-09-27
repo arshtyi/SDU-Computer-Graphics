@@ -6,7 +6,7 @@ add_requires("eigen 3", { system = false })
 
 target("Example")
 set_kind("binary")
-add_files("example/main.cpp")
+add_files("example/src/main.cpp")
 add_packages("eigen")
 target_end()
 

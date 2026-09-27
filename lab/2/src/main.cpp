@@ -33,8 +33,7 @@ Eigen::Matrix4f get_projection_matrix(float eye_fov, float aspect_ratio, float z
     const float t = zNear * std::tan(eye_fov * MY_PI / 360.0f);
     const float r = t * aspect_ratio;
     Eigen::Matrix4f projection;
-    projection << zNear / r, 0, 0, 0, 0, zNear / t, 0, 0, 0, 0, -(zFar + zNear) / (zFar - zNear),
-        -2.0f * zFar * zNear / (zFar - zNear), 0, 0, -1, 0;
+    projection << zNear / r, 0, 0, 0, 0, zNear / t, 0, 0, 0, 0, -(zFar + zNear) / (zFar - zNear), -2.0f * zFar * zNear / (zFar - zNear), 0, 0, -1, 0;
     return projection;
 }
 Eigen::Matrix4f get_rotation(Eigen::Vector3f axis, float angle) {
@@ -49,9 +48,8 @@ Eigen::Matrix4f get_rotation(Eigen::Vector3f axis, float angle) {
     const float d = 1.0f - c;
     const float x = axis.x(), y = axis.y(), z = axis.z();
     Eigen::Matrix4f rotation;
-    rotation << c + d * x * x, d * x * y - s * z, d * x * z + s * y, 0, d * y * x + s * z,
-        c + d * y * y, d * y * z - s * x, 0, d * z * x - s * y, d * z * y + s * x, c + d * z * z, 0,
-        0, 0, 0, 1;
+    rotation << c + d * x * x, d * x * y - s * z, d * x * z + s * y, 0, d * y * x + s * z, c + d * y * y, d * y * z - s * x, 0, d * z * x - s * y,
+        d * z * y + s * x, c + d * z * z, 0, 0, 0, 0, 1;
     return rotation;
 }
 int main(int argc, const char **argv) {

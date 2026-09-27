@@ -6,8 +6,7 @@
 
 namespace rst {
 
-rasterizer::rasterizer(int width, int height)
-    : width(width), height(height), frame_buf(width * height), depth_buf(width * height) {}
+rasterizer::rasterizer(int width, int height) : width(width), height(height), frame_buf(width * height), depth_buf(width * height) {}
 
 pos_buf_id rasterizer::load_positions(const std::vector<Eigen::Vector3f> &positions) {
     const int id = next_id++;
