@@ -31,3 +31,5 @@ report *nos = "0 1 2 3 4 5 6 7 8 9 10":
         [ -f "$pdf" ] || continue
         cp "$pdf" "智能24_202400130242_彭靖轩_计算机图形学实验$no.pdf"
     done
+
+all: archive report
