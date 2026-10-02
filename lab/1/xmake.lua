@@ -6,6 +6,7 @@ add_requires("eigen 3", { system = false })
 
 target("PointLocation")
 set_kind("binary")
+set_rundir(os.projectdir())
 add_files("src/main.cpp")
 add_packages("eigen")
 

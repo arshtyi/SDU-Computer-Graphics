@@ -3,8 +3,8 @@
 ```sh
 xmake test
 xmake test PointLocation/basic
-xmake run PointLocation tests/basic.in
-xmake run PointLocation < tests/basic.in
+xmake run PointLocation test/basic.in
+xmake run PointLocation < test/basic.in
 ```
 
 | case         | covers                                     |
