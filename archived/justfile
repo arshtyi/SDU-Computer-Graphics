@@ -8,7 +8,7 @@ archive *nos = "0 1 2 3 4 5 6 7 8 9 10":
     set -eu
     for no in {{nos}}; do
         files=()
-        for file in example include src test xmake.lua report/main.pdf ; do
+        for file in example include lib src test script xmake.lua report/main.pdf ; do
             if [ -e "../lab/$no/$file" ]; then
                 files+=("$file")
             fi

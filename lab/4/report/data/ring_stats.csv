@@ -1,0 +1,5 @@
+level,vertices,edges,faces,boundary_edges,euler
+0,8,12,4,8,0
+1,24,40,16,16,0
+2,80,144,64,32,0
+3,288,544,256,64,0
