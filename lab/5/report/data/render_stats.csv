@@ -1,0 +1,8 @@
+shader,triangles,covered_pixels
+normal,5856,60768
+phong,5856,60768
+texture,5856,60768
+bump,5856,60768
+bump-phong,5856,60768
+displacement-fragment,5856,60768
+displacement,93696,68428
