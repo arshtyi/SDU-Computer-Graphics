@@ -1,0 +1,42 @@
+[project]
+name            = "lab6"
+version         = "0.1.0"
+requires-python = ">=3.12,<3.14"
+dependencies    = [ "torch>=2.8,<3", "numpy>=2,<3", "pillow>=11,<13", "matplotlib>=3.10,<4" ]
+
+[project.scripts]
+lab6 = "main:main"
+
+[build-system]
+requires      = [ "hatchling" ]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+only-include = [ "src" ]
+sources      = [ "src" ]
+
+[dependency-groups]
+dev = [ "ruff>=0.14", "ty>=0.0.1" ]
+
+[tool.ruff]
+line-length    = 150
+target-version = "py312"
+include        = [ "src/*.py", "test/*.py" ]
+
+[tool.ruff.lint]
+select = [ "E", "F", "I", "UP", "B" ]
+
+[tool.ruff.lint.isort]
+known-first-party = [ "data", "main", "model", "train" ]
+
+[tool.ty.src]
+include = [ "src", "test" ]
+
+[tool.ty.environment]
+extra-paths = [ "src" ]
+
+[[tool.ty.overrides]]
+include = [ "src/model.py" ]
+
+[tool.ty.overrides.rules]
+invalid-mutable-override = "ignore"
