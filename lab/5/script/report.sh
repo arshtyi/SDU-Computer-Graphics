@@ -50,4 +50,3 @@ for filter in nearest bilinear; do
         magick "report/image/small_$filter.png" -crop 240x240+220+190 +repage "report/image/small_${filter}_crop.png"
     fi
 done
-typst compile --root . report/main.typ report/main.pdf
