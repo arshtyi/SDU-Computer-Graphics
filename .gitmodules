@@ -1,0 +1,4 @@
+[submodule "lab/ImplicitForge"]
+	path = lab/ImplicitForge
+	url = git@github.com:arshtyi/ImplicitForge.git
+	branch = main
